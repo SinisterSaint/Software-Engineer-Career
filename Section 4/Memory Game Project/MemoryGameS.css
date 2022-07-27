@@ -1,0 +1,46 @@
+#game div {
+  border: 1px solid black;
+  width: 15%;
+  height: 200px;
+  margin: 10px;
+  display: inline-block;
+}
+
+#game div:hover {
+border: 5px solid rgb(213, 250, 4);
+
+}
+
+.red{
+  background-color: red;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.green{
+  background-color: green;
+}
+
+.orange{
+  background-color: orange;
+}
+
+.purple{
+  background-color: purple;
+}
+
+.backOfCard{
+  background-color: black;
+}
+
+.match:hover {
+  cursor: default;
+  border: none
+}
+
+.match {
+  cursor: default;
+  
+}
