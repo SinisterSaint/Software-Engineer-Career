@@ -1,0 +1,80 @@
+body {
+  background-color: #115ff4;
+}
+
+header {
+  color: white;
+  text-align: center;
+}
+
+header > h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+#jeopardy {
+  text-align: center;
+  font-size: 9pt;
+  background-color: #060ce9;
+  color: white;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+#jeopardy th, #jeopardy td {
+  border: solid 1px white;
+  width: 10em;
+  padding: 0.5em;
+}
+
+#jeopardy td.disabled {
+  background-color: #28a200
+}
+
+th {
+  text-transform: uppercase;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  height: 4em;
+  text-shadow: darkgoldenrod 1px 1px;
+}
+
+td {
+  height: 7em;
+  font-family: Copse, serif;
+}
+
+button, td {
+  cursor: pointer;
+}
+
+.fa-question-circle {
+  pointer-events: none;
+}
+
+#start {
+  background-color: #8d2ab5;
+  padding: 1em 3em;
+  border: none;
+  border-radius: 0.5em;
+  color: white;
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+
+#start:hover,
+#start.disabled {
+  background-color: #74119c;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+#spin-container {
+  font-size: 12em;
+  text-align: center;
+  color: white;
+  margin: 25px;
+  display: none;
+}
