@@ -25,7 +25,7 @@ function generateStoryMarkup(story, showDeleteButton = false) {
   const hostName = story.getHostName();
   // Create a variable that has the Boolean() that accepts "currentUser",
   //  revealing favorite/non-favorite  if user is logged in 
-  const showStar = Boolean(curretUser);
+  const showStar = Boolean(currentUser);
 
   return $(`
       <li id="${story.storyId}">
@@ -152,4 +152,4 @@ async function toggleStoryFavorite(evt) {
   }
 }
 
-$stariesLists.on("click", ".star", toggleStoryFavorite);
+$storiesLists.on("click", ".star", toggleStoryFavorite);

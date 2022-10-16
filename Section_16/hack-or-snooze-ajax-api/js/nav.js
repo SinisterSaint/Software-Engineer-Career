@@ -38,7 +38,7 @@ function NavMyStories(evt) {
   putUserStoriesOnPage();
   $ownStories.show();
 }
-$body.on("click", "#nav-my-stories", clickNavMyStories);
+$body.on("click", "#nav-my-stories", NavMyStories);
 /** Show login/signup on click on "login" */
 
 function navLoginClick(evt) {
