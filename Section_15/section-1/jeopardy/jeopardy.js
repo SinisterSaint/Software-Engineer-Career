@@ -17,11 +17,18 @@
 //    },
 //    ...
 //  ]
+<<<<<<< HEAD
 const numOfCategories = 6;
 const numOfQuestionsPerCategory = 5;
 const apiUrl = "http://jservice.io/api/"
 
 
+=======
+const numCategories = 6;
+const categoryQuestions = 5;
+const apiUrl = "http://jservice.io/api/"
+
+>>>>>>> d60c6f84ed90309110a4b3575196d25ff28d5f35
 let categories = [];
 
 
@@ -30,11 +37,17 @@ let categories = [];
  * Returns array of category ids
  */
 
+<<<<<<< HEAD
 // getCategoryIds functions will pick from 50 categories
 async function getCategoryIds() {
     let res = await axios.get(`${apiUrl}categories?count=50`);
     let categoryIds = res.data.map(category => category.id);
     return _.sampleSize(categoryIds, numOfCategories);
+=======
+
+function getCategoryIds() {
+    let res = await axios.get(apiUrl)
+>>>>>>> d60c6f84ed90309110a4b3575196d25ff28d5f35
 }
 
 /** Return object with data about a category:
@@ -49,6 +62,7 @@ async function getCategoryIds() {
  *   ]
  */
 
+<<<<<<< HEAD
 async function getCategory(categoryId) {
     
     const res = await axios.get(`${apiUrl}categories?id=${categoryId}`);
@@ -63,6 +77,9 @@ async function getCategory(categoryId) {
     }));
     console.log(res.data);
     return {title: gameCategory[0].title, clues: questionClue};
+=======
+function getCategory(catId) {
+>>>>>>> d60c6f84ed90309110a4b3575196d25ff28d5f35
 }
 
 /** Fill the HTML table#jeopardy with the categories & cells for questions.
@@ -74,6 +91,7 @@ async function getCategory(categoryId) {
  */
 
 async function fillTable() {
+<<<<<<< HEAD
     hideLoadingView();
     let catIds = await getCategoryIds();
     
@@ -104,6 +122,8 @@ async function fillTable() {
     
     $("#jeopardy tbody").append($tableRow);
 
+=======
+>>>>>>> d60c6f84ed90309110a4b3575196d25ff28d5f35
 }
 
 /** Handle clicking on a clue: show the question or answer.
@@ -115,6 +135,7 @@ async function fillTable() {
  * */
 
 function handleClick(evt) {
+<<<<<<< HEAD
     const id = evt.target.id;
     console.log(id);
     const [categoryId, clueId] = id.split("-");
@@ -135,11 +156,16 @@ function handleClick(evt) {
 }
 // to update cell text
 // $(`#${categoryId}-${clueId}`).html(message);
+=======
+}
+
+>>>>>>> d60c6f84ed90309110a4b3575196d25ff28d5f35
 /** Wipe the current Jeopardy board, show the loading spinner,
  * and update the button used to fetch data.
  */
 
 function showLoadingView() {
+<<<<<<< HEAD
     // clear game board
     $("#jeopardy thead").empty();
     $("#jeopardy tbody").empty();
@@ -148,18 +174,25 @@ function showLoadingView() {
     $("#start")
         .addClass("disable")
         .text("Your game will begin shortly");
+=======
+>>>>>>> d60c6f84ed90309110a4b3575196d25ff28d5f35
 
 }
 
 /** Remove the loading spinner and update the button used to fetch data. */
 
 function hideLoadingView() {
+<<<<<<< HEAD
     $("#start")
     .removeClass("disable")
     .text("Restart Game!");
     $("#spin-container").hide();
    
 }
+=======
+}
+
+>>>>>>> d60c6f84ed90309110a4b3575196d25ff28d5f35
 /** Start game:
  *
  * - get random category Ids
@@ -168,6 +201,7 @@ function hideLoadingView() {
  * */
 
 async function setupAndStart() {
+<<<<<<< HEAD
     let gameLoading = $("#start").text() === "Your game will begin shortly";
     if (!gameLoading) {
         showLoadingView();
@@ -217,3 +251,14 @@ function shuffleCategories(a) {
 
     return a;
 }
+=======
+}
+
+/** On click of start / restart button, set up game. */
+
+// TODO
+
+/** On page load, add event handler for clicking clues */
+
+// TODO
+>>>>>>> d60c6f84ed90309110a4b3575196d25ff28d5f35
