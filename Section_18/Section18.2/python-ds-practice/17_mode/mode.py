@@ -11,3 +11,18 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    # Count the frequencty of num
+    counts = {}
+
+    for num in nums:
+        counts[num] = counts.get(num, 0) + 1
+
+    # find the highest value (the most frequent number)
+
+    highest_value = max(counts.values())
+
+    # Now we need to see at which index the highest value is at
+
+    for (num, frequency) in counts.itmes():
+        if frequency == highest_value:
+            return num
