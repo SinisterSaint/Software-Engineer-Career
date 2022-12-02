@@ -16,6 +16,9 @@ def homepage():
 
     return render_template("index.html", board=board, highscore=highscore, nplays=nplays)
 
+
+    
+
 @app.route("/check-word")
 def check_word():
     """Check to see if word is in the dictionary"""
