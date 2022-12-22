@@ -21,12 +21,12 @@ def conversion():
         res = jsonify([{'value': res['data'][x]['value'] * float(converting_from_input), 'code': x} for x in res['data'].keys()])
         res.headers.add("Access-Control-Allow-Origin", "*")
 
-        return res
-    return render_template('index.html')
+        
+        return render_template('index.html', data = [res])
        
-if request.method == "POST":
+    if request.method == "POST":
     # Choosing Currenceis 
-    converting_from = request.form.get("currency")
-    converting_to = request.form.get("currency")
+        converting_from = request.form.get("currency")
+        converting_to = request.form.get("currency")
 
-    print(f"You are converting {converting_from} to {converting_to}!")
+        print(f"You are converting {converting_from} to {converting_to}!")
