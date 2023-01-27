@@ -1,0 +1,69 @@
+/**
+Styles for Fit Social Sharing Widget.
+ */
+
+.fit-social-share {
+	display:none;
+	left: -48px;
+	position: fixed;
+	top: 200px;
+}
+
+.fit-ssw-link {
+	display:block;
+	height: 48px;
+	padding: 6px 8px;
+	width: 48px;
+}
+.fit-ssw-link:hover {
+	padding: 6px 24px;
+	width: 74px;
+}
+
+
+.fit-ssw-facebook {
+	background-color: rgb(59, 89, 152);
+}
+.fit-ssw-twitter {
+	background-color: rgb(29, 161, 242);
+}
+.fit-ssw-print {
+	background-color: rgb(115, 138, 141);
+}
+.fit-ssw-email {
+	background-color: rgb(132, 132, 132);
+}
+
+
+@media screen and ( min-width: 946px ) {
+	.fit-social-share {
+		display: block;		
+		transition: all 0.5s ease-in-out;
+		-webkit-transition: all 0.5s ease-in-out;
+	}
+
+	.fit-social-share.scrolled {
+		left: 0px;
+	}
+}
+/*
+     FILE ARCHIVED ON 02:56:56 Apr 19, 2021 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 03:17:08 Jan 25, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 88.562
+  exclusion.robots: 0.067
+  exclusion.robots.policy: 0.06
+  RedisCDXSource: 0.519
+  esindex: 0.007
+  LoadShardBlock: 60.852 (3)
+  PetaboxLoader3.datanode: 50.52 (5)
+  CDXLines.iter: 19.113 (3)
+  PetaboxLoader3.resolve: 65.308 (2)
+  load_resource: 112.674 (2)
+*/

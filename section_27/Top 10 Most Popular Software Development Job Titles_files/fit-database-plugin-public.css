@@ -1,0 +1,205 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+@charset "utf-8";
+
+.fit-rubric {
+	border-radius: 15px;
+	box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.3);
+	padding: 1rem;
+	margin: 1rem 0;
+	font-family: "PT Sans Caption",sans-serif;
+}
+
+.fit-rubric .nav-pills .nav-link {
+	background-color: transparent;
+	color: #2880ba;
+	text-transform: uppercase;
+}
+
+.entry-content .fit-rubric ul.nav-pills {
+	padding-inline-start: 0px;
+}
+
+.entry-content .fit-rubric ul.nav-pills li {
+	padding-left: 0px;
+}
+
+.fit-rubric-chart {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	Margin: 0 auto;
+}
+
+.fit-rubric-chart .fit-rubric-pie {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 40px;
+	left: 40px;
+	display: block;
+	content: '';
+	border-radius: 100px;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+	pointer-events: none;
+}
+.breakdown-scores {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.breakdown-score {
+	font-size: 1rem;
+	padding: 1rem;
+	width:50%;
+}
+
+.breakdown-note {
+	font-size: small;
+	text-align: right;
+}
+
+.fit-rubric, .tab-pane {
+	min-height: 200px;
+}
+.fit-rubric .fit-rubric-copy {
+	font-family: "PT Serif",serif;
+}
+
+.pane-color {
+	height: 10px;
+	width: 10px;
+	float: left;
+	margin: .5rem .5rem 1rem 0;
+}
+
+.pane-title {
+	float: none;
+	clear: both;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-word;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
+
+@media screen and (max-width: 1023px) {
+	.fit-rubric .nav-pills .nav-item {
+		width: 100%;
+	}
+	.fit-rubric .nav-pills .nav-link {
+		border: 1px solid #2880ba;
+		width: 100%;
+		display: none;
+	}
+	.fit-rubric .nav-pills .nav-link.active,
+	.fit-rubric .nav-pills .nav-link.open {
+		display:block;
+	}
+	.fit-rubric .nav-pills .nav-link.active::after {
+		content: '';
+		float: right;
+	}
+	.fit-rubric .nav-pills .nav-link.active::after {
+		content: '▼';
+	}
+	.fit-rubric .fit-rubric-chart {
+		float:left;
+	}
+	.fit-rubric #breakdown-chart.fit-rubric-chart {
+		float:none;
+	}
+	.fit-rubric .tab-pane h3 {
+		padding-top:4rem;
+	}
+	.fit-rubric .tab-pane p {
+		clear: both;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.fit-rubric .nav-pills .nav-link {
+		color: #b2b2b2;
+	}
+	.fit-rubric .nav-pills .nav-link.active,
+	.fit-rubric .nav-pills .nav-link:hover {
+		border: 0;
+		color: #2880ba;
+	}
+
+	.fit-rubric .nav-pills .nav-link::after,
+	.fit-rubric .nav-pills .nav-link::after {
+		background-color: #dbdbdb;
+		border-radius: 4px;
+		bottom: 2px;
+		content: '';
+		height: 4px;
+		left: 0;
+		margin-left: 10%;
+		position: absolute;
+		transition: width .25s;
+		width: 80%;
+	}
+
+	.fit-rubric .nav-pills .nav-link:hover::after,
+	.fit-rubric .nav-pills .nav-link.active::after {
+		height: 4px;
+		background-color: #2880ba;
+	}
+
+	.entry-content ul#rubricTab {
+		padding-inline-start: 0;
+	}
+
+	.entry-content ul#rubricTab li {
+		font-size: 1rem;
+		padding-left: 0;
+	}
+
+	#rubricTab .nav-link {
+		padding: .5rem;
+		position: relative;
+	}
+
+	.fit-rubric-chart {
+		float: left
+	}
+
+	.breakdown-score {
+		width: 32%
+	}
+
+}
+@media screen and (max-width: 768px) {
+	.fit-rubric .fit-rubric-chart {
+		float:none;
+	}
+}
+/*
+     FILE ARCHIVED ON 02:56:06 Apr 19, 2021 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 03:17:07 Jan 25, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 225.827
+  exclusion.robots: 0.067
+  exclusion.robots.policy: 0.06
+  cdx.remote: 0.057
+  esindex: 0.009
+  LoadShardBlock: 99.748 (3)
+  PetaboxLoader3.datanode: 121.658 (5)
+  CDXLines.iter: 16.218 (3)
+  load_resource: 57.056 (2)
+  PetaboxLoader3.resolve: 30.9
+*/

@@ -1,0 +1,50 @@
+.a0-footer {
+    display: none;
+}
+#a0-widget .a0-zocial.a0-wp-login {
+    background-color: #490050;
+}
+#wp-login-form-wrapper {
+    display: none;
+}
+.auth0-login .form-signin-heading {
+    margin-bottom: 10px;
+}
+.a0-message{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #FFF;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+    z-index: 999;
+}
+
+.a0-message small {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/*
+     FILE ARCHIVED ON 02:56:04 Apr 19, 2021 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 03:17:07 Jan 25, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 261.881
+  exclusion.robots: 0.062
+  exclusion.robots.policy: 0.057
+  cdx.remote: 0.05
+  esindex: 0.007
+  LoadShardBlock: 190.494 (3)
+  PetaboxLoader3.datanode: 136.184 (5)
+  CDXLines.iter: 15.445 (3)
+  load_resource: 136.047 (2)
+  PetaboxLoader3.resolve: 81.386
+*/

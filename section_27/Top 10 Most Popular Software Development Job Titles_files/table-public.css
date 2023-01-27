@@ -1,0 +1,22 @@
+.fit-table-filter{float:right;margin-bottom:1rem;position:relative}.fit-table-filter:after{display:block;position:absolute;top:15px;right:10px;width:0;height:0;border-right:6px solid transparent;border-top:6px solid #2880ba;border-left:6px solid transparent;border-bottom:0 dotted;margin-left:2px;content:''}.fit-table-select{-moz-appearance:none;appearance:none;-webkit-appearance:none;border-radius:5px;border-color:#ddd;color:#2880ba;font-family:'PT Sans Caption',sans-serif;padding:3px 8px}.fit-table-container .fit-table-scroll-container{position:relative;width:100%;z-index:1;margin:auto;overflow:auto;border-radius:15px 15px 3px 3px}.fit-table-container .fsb_table_extra_info{border:0 solid #d9edf7;border-bottom-width:3px;border-radius:15px 15px 3px 3px;padding:8px;margin:0 auto 1em;max-width:830px;overflow:hidden;width:100%}.fit-table{border:0 solid #d9edf7;border-bottom-width:3px;border-collapse:separate;border-spacing:0;margin:0 auto 1em;max-width:830px;width:100%}.fit-table thead th{position:-webkit-sticky;position:sticky;top:0;z-index:2}@media (max-width:768px){.fit-table.fit-table-mobile-tabbed th.cd{cursor:pointer;border-left:1px solid #b2d5e9}.fit-table.fit-table-mobile-tabbed th.cd.active{background-color:#fff!important;color:#2880ba;border-bottom-color:#fff}.fit-table.fit-table-mobile-tabbed tbody{border-top:none}.fit-table.fit-table-mobile-tabbed tbody tr:first-of-type{border-top:none}.fit-table.fit-table-mobile-tabbed tbody tr:first-of-type td{border-top:none}}.fit-table.fit-table-first-col-header tr th:first-child{position:-webkit-sticky;position:sticky;left:0;z-index:5}.fit-table .td,.fit-table .th,.fit-table td,.fit-table th{padding:8px;border:none;background:0 0;text-align:left;line-height:1.2;float:none!important}.fit-table .th,.fit-table th{font-family:'PT Sans Caption',sans-serif}.fit-table .tbody .td,.fit-table tbody td{vertical-align:top}.fit-table .tbody .td,.fit-table .tfoot .th,.fit-table tbody td,.fit-table tfoot th{border-top:1px solid #ddd}.fit-table .tbody .tr:first-of-type .td,.fit-table tbody tr:first-of-type td{border-top:0}.fit-table .tbody .tr:nth-of-type(odd) .td,.fit-table tbody tr:nth-of-type(odd) td{background-color:#f9f9f9}.fit-table .tbody .tr:nth-of-type(even) .td,.fit-table tbody tr:nth-of-type(even) td{background-color:#fff}.fit-table .thead .th,.fit-table thead th{border-bottom:1px solid #ddd}.fit-table .tfoot .th,.fit-table .thead .th,.fit-table tfoot th,.fit-table thead th{background-color:#d9edf7;font-weight:700;vertical-align:middle}.fit-table thead th.ch{background-color:#2880ba!important;border-right:2px solid #b2d5e9;color:#fff}.fit-table tbody th.ch{color:#2880ba;border-right:2px solid #b2d5e9;vertical-align:top}.fit-table tbody tr:hover th.ch{background-color:#9ec9e3}.fit-table tbody tr:nth-of-type(odd) th.ch{background-color:#d9edf7}.fit-table tbody tr:nth-of-type(odd):hover th.ch{background-color:#9ec9e3}.fit-table tbody tr:nth-of-type(even) th.ch{background-color:#fff}.fit-table tbody tr:nth-of-type(even):hover th.ch{background-color:#f3f3f3}.fit-table .tbody .tr:hover .td,.fit-table tbody tr:hover td{background-color:#f3f3f3}.fit-table img{margin:0;padding:0;border:none;max-width:none}
+/*
+     FILE ARCHIVED ON 02:56:07 Apr 19, 2021 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 03:17:07 Jan 25, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 87.371
+  exclusion.robots: 0.084
+  exclusion.robots.policy: 0.078
+  cdx.remote: 0.053
+  esindex: 0.008
+  LoadShardBlock: 60.07 (3)
+  PetaboxLoader3.datanode: 217.698 (5)
+  CDXLines.iter: 16.743 (3)
+  load_resource: 324.609 (2)
+  PetaboxLoader3.resolve: 139.876
+*/

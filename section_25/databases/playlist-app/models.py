@@ -7,6 +7,7 @@ db = SQLAlchemy()
 
 class Playlist(db.Model):
     """Playlist."""
+  
    
 
     # ADD THE NECESSARY CODE HERE
@@ -16,6 +17,7 @@ class Playlist(db.Model):
 
 class Song(db.Model):
     """Song."""
+  
 
     # ADD THE NECESSARY CODE HERE
     id = db.Column(db.Integer, primary_key=True)
@@ -24,6 +26,7 @@ class Song(db.Model):
 
 class PlaylistSong(db.Model):
     """Mapping of a playlist to a song."""
+    
 
     # ADD THE NECESSARY CODE HERE
     id = db.Column(db.Integer, primary_key=True)

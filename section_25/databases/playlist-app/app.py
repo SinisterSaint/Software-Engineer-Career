@@ -59,6 +59,8 @@ def add_playlist():
     # ADD THE NECESSARY CODE HERE FOR THIS ROUTE TO WORK
 
 
+
+
 ##############################################################################
 # Song routes
 
@@ -76,6 +78,11 @@ def show_song(song_id):
     """return a specific song"""
 
     # ADD THE NECESSARY CODE HERE FOR THIS ROUTE TO WORK
+    song = song.get_or_404(song_id)
+    info = {"name": song.name, "description": song.description}
+
+    return jsonify(info)
+
 
 
 @app.route("/songs/add", methods=["GET", "POST"])
@@ -87,6 +94,17 @@ def add_song():
     """
 
     # ADD THE NECESSARY CODE HERE FOR THIS ROUTE TO WORK
+    form = SongForm()
+
+    if form.validate_on_submit():
+        data = {k: v for k, v in form.data.items() if k != "csrf_token"}
+        new_song = Song(**data)
+
+        db.session.add(new_song)
+        db.session.commit()
+        flash(f"{new_song.name} added.")
+        return redirect(url_for('add_song'))
+
 
 
 @app.route("/playlists/<int:playlist_id>/add-song", methods=["GET", "POST"])
@@ -102,12 +120,18 @@ def add_song_to_playlist(playlist_id):
 
     # Restrict form to songs not already on this playlist
 
-    curr_on_playlist = ...
-    form.song.choices = ...
+    curr_on_playlist = [s.id for s in playlist.songs]
+    form.song.choices = (db.session.query(Song.id, Song.title)
+                      .filter(Song.id.notin_(curr_on_playlist))
+                      .all())
 
     if form.validate_on_submit():
 
           # ADD THE NECESSARY CODE HERE FOR THIS ROUTE TO WORK
+          playlist_song = PlaylistSong(song_id=form.song.data,
+                                  playlist_id=playlist_id)
+          db.session.add(playlist_song)
+          db.session.commit()
 
           return redirect(f"/playlists/{playlist_id}")
 
