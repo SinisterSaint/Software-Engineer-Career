@@ -1,17 +1,35 @@
+"""Tests for currency converter."""
+
 from unittest import TestCase
+
 from app import app
-import CurrenyRates
-from flask import session
 
-class FlaskTests(TestCase):
-    # Write Tests for every function / feature
+class CurrencyConvertedTestCase(TestCase):
     def setUp(self):
-        """Stuff to do before every test"""
-
         self.client = app.test_client()
-        app.config['TESTING'] = True
 
-    def test_homepage(self):
-        # Make sure the forex converter is working
-        with self.client:
-            res = self.client('/')
+    def test_form_shows(self):
+        """Test that form appears."""
+
+        resp = self.client.get("/")
+        self.assertIn(b'<form', resp.data)
+
+    def test_form_failures(self):
+        """Test conversion failures."""
+
+        resp = self.client.get("/convert", 
+                                query_string={"code_from": "MUPPET",
+                                              "code_to": "BLARGH",
+                                               "amt": "glumph"})
+        self.assertIn(b'Not a valid amount', resp.data)
+        self.assertIn(b'Not a valid code: MUPPET', resp.data)
+        self.assertIn(b'Not a valid code: BLARGH', resp.data)
+
+    def test_conversion(self):
+        """Test Conversion"""
+
+        resp = self.client.get("/convert",
+                                query_string={"code_from": "USD",
+                                             "code_to": "USD",
+                                             "amt": "1.55"})   )
+        self.assertIn(b'$ 1.55', resp.data)
