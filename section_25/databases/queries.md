@@ -19,7 +19,7 @@ Using the `movies_db` database, write the correct SQL queries for each of these 
 ```SELECT title FROM movies;```
 
 2.  All information on the G-rated movies.
-```SELECT title FROM movies WHERE rating = g;``` #REVIEW
+```SELECT * FROM movies WHERE rating = g;``` #REVIEW
 
 3.  The title and release year of every movie, ordered with the
     oldest movie first.
@@ -30,7 +30,7 @@ Using the `movies_db` database, write the correct SQL queries for each of these 
 
 5.  A query that returns the columns of `rating` and `total`, tabulating the
     total number of G, PG, PG-13, and R-rated movies.
-    ```SELECT rating, COUNT(rating)  FROM movies GROUP BY rating;```
+    ```SELECT rating, COUNT(*) AS total FROM  movies GROUP BY rating;```
 
 6.  A table with columns of `release_year` and `average_runtime`,
     tabulating the average runtime by year for every movie in the database. The data should be in reverse chronological order (i.e. the most recent year should be first).

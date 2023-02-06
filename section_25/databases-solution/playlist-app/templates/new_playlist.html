@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add a new playlist!</h1>
+
+<form method="POST">
+  {{ form.csrf_token }}
+
+  {% for field in form if field.widget.input_type != 'hidden' %}
+  <div class="form-group">
+    {{ field.label }}
+    {{ field(class_="form-control") }}
+  </div>
+  {% endfor %}
+
+  <button class="btn btn-primary">Add</button>
+</form>
+
+{% endblock %}
