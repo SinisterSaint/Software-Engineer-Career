@@ -1,0 +1,37 @@
+body {
+    text-align: center;
+    background-color: red;
+}
+
+button {
+    padding: 15;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    display: none;
+    margin: 0 auto;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: black;
+
+
+}
+
+button:active,
+button:focus {
+    outline: none;
+}
+
+#card-area {
+    margin-top: 80px;
+}
+
+#card-area > img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

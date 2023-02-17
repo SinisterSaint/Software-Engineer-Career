@@ -7,7 +7,7 @@
 
 
 
--- https://app.quickdatabasediagrams.com/#/d/CskJiA  Diagram Link
+-- https://app.quickdatabasediagrams.com/#/d/CskJiA  Schema Diagram Link
 
 CREATE TABLE "Players" (
     "PlayerID" int   NOT NULL,
