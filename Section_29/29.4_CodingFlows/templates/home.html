@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<title class="title"> Search Statistical Leaders for NBA Players</title>
+
+    <form action="/form/submit" method="GET"> 
+        <input type="text" name="text" class="search" placeholder="Search here!">
+        <input type="submit" name="submit" class="submit" value="Search">
+      </form>
+
+
+
+
+<script id="data"  src="/static/sportsdatabase.js"></script>
+
+{% endblock %}
