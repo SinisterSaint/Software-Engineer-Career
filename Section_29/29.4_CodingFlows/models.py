@@ -8,7 +8,7 @@ bcrypt = Bcrypt()
 
 db = SQLAlchemy()
 
-class NBAdatabase(db.model):
+class NBAdatabase(db.Model):
     """Sports"""
 
     __tablename__ = "League Leaders"
@@ -16,7 +16,7 @@ class NBAdatabase(db.model):
     Players_ID = db.Column(db.Integer, primary_key=True, autoincrement=True)
     Rank = db.Column(db.Integer, nullable=False)
     Player = db.Column(db.Text, nullable=False)
-    Team_ID = db.Column(db.Integer, db.ForeignKey("team.id"))
+    Team_ID = db.Column(db.Integer, )
     Team = db.Column(db.Text, nullable=False)
     GP = db.Column(db.Integer, nullable=False)
     MIN = db.Column(db.Integer, nullable=False)
@@ -46,7 +46,7 @@ class Players(db.Model):
     __tablename__ = "Players"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    TeamID = db.Column(db.Integer, db.ForeignKey("team.id"))
+    TeamID = db.Column(db.Integer, )
     Player = db.Column(db.Text, nullable=False)
     Position = db.Column(db.Text, nullable=False)
     Number = db.Column(db.Integer, nullable=False)

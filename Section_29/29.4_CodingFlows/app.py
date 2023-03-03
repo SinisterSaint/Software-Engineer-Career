@@ -1,21 +1,21 @@
 "Flask App for Sports Database"
 from flask import Flask, request, json, render_template, redirect, jsonify, flash, session, g, abort
-from flask_debugtoolbar import DebugToolbarExtension
+# from flask_debugtoolbar import DebugToolbarExtension
 from models import db, connect_db, NBAdatabase, Players, User
 from forms import UserAddForm, UserEditForm, LoginForm, MessageForm
 from sqlalchemy.exc import IntegrityError
-
+from nba_api.stats.endpoints import playercareerstats
 
 CURR_USER_KEY = "curr_user"
 
 app = Flask(__name__) 
 
-app.config['SQLACLHEMY_DATABASE_URI'] = 'postgresql:///sportsdatabase'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///sportsdatabase'
 app.config['SECRET_KEY'] = "thesecretkey"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = True
-
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 connect_db(app)
 db.create_all()
@@ -25,20 +25,26 @@ db.create_all()
 # Create stats route(Stats.html)
 # Create get route for retrieving data from nba.com
 
+print('py')
 
+# Nikola Jokić
+career = playercareerstats.PlayerCareerStats(player_id='203999') 
+print(career.get_json())
 
 
 @app.route("/")
 def root():
     """Render Homepage"""
     
-    return render_template("index.html")
+    return render_template("home.html")
 
-@app.route('/stats', methods=["GET"])
-def stats():
+@app.route('/stats/<id>', methods=["GET"])
+def stats(id):
     """retrive stats """
-
-    return render_template('stats.html')
+    # Nikola Jokić
+    career = playercareerstats.PlayerCareerStats(player_id=id) 
+    print(career.get_json())
+    return render_template('home.html')
     
 
 
@@ -76,7 +82,7 @@ def signup():
     If the there already is a user with that username: flash message
     and re-present form.
     """
-    if CURR_USER_KEY in session:
+    if CURR_USER_KEY in sso:
         del session[CURR_USER_KEY]
     form = UserAddForm()
 
