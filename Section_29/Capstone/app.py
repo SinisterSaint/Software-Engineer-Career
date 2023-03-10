@@ -10,6 +10,8 @@ from sqlalchemy.exc import IntegrityError
 CURR_USER_KEY = "curr_user"
 
 app = Flask(__name__) 
+app.app_context().push()
+
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///sportsdatabase'
 app.config['SECRET_KEY'] = "thesecretkey"
