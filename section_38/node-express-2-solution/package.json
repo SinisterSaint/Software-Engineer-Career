@@ -1,0 +1,14 @@
+{
+  "name": "express-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "timeword.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^23.6.0"
+  }
+}
