@@ -1,4 +1,3 @@
-import React from "react";
 
 const SearchBar = ({ query, loading, handleSubmit, setQuery }) => {
   const handleFormSubmit = (event) => {

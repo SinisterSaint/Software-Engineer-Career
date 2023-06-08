@@ -1,22 +1,3 @@
-// const express = require('express');
-// const router = express.Router();
-// const db = require('../db');
-
-
-// router.post("/register", (req, res) => {
-//   const { username, password } = req.body;
-
-//   if (!username || !password) {
-//     return res
-//       .status(400)
-//       .json({ message: "Username and password are required." });
-//   }
-
-//   // db.query(`SELECT * FROM USERS `)
-
-//   return res.status(200).json({ message: "User registered successfully." });
-// });
-
 // module.exports = router;
 const express = require('express');
 const router = express.Router();

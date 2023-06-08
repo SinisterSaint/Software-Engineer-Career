@@ -3,7 +3,9 @@ import axios from "axios";
 import "./App.css";
 import SearchBar from "./components/SearchBar";
 import RecipeBanner from "./components/RecipeBanner";
+
 const API = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+const API_BASE_URL = "http://localhost:3001"; // Change to your Express API URL
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -21,7 +23,14 @@ function App() {
       if (!isRegistering) {
         endpoint = "/user/login";
       }
-      const response = await axios.post(endpoint, { username, password });
+
+      console.log(username)
+      console.log(password)
+
+      const response = await axios.post(API_BASE_URL + endpoint, {
+        username,
+        password,
+      });
       console.log(response.data);
       setUsername("");
       setPassword("");
