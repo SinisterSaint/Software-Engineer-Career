@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Login</h1>
+  <form method="POST" action="{{ url_for('login') }}">
+    <!-- Form fields for login -->
+    <!-- ... -->
+    <button type="submit">Login</button>
+  </form>
+{% endblock %}

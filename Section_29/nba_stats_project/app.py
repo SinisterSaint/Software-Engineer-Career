@@ -10,6 +10,10 @@ app.config['SECRET_KEY'] = 'your_secret_key'
 
 db = SQLAlchemy(app)
 
+with app.app_context():
+    db.create_all()
+
+
 class Player(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     rank = db.Column(db.Integer)

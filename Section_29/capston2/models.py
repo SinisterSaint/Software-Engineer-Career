@@ -1,11 +1,7 @@
-"""Models for Sports Database App"""
-
 from flask_sqlalchemy import SQLAlchemy
-
 from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt()
-
 db = SQLAlchemy()
 
 class NBAdatabase(db.Model):
@@ -16,7 +12,7 @@ class NBAdatabase(db.Model):
     Players_ID = db.Column(db.Integer, primary_key=True, autoincrement=True)
     Rank = db.Column(db.Integer, nullable=False)
     Player = db.Column(db.Text, nullable=False)
-    Team_ID = db.Column(db.Integer, )
+    Team_ID = db.Column(db.Integer)
     Team = db.Column(db.Text, nullable=False)
     GP = db.Column(db.Integer, nullable=False)
     MIN = db.Column(db.Integer, nullable=False)
@@ -46,47 +42,29 @@ class Players(db.Model):
     __tablename__ = "Players"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    TeamID = db.Column(db.Integer, )
+    TeamID = db.Column(db.Integer)
     Player = db.Column(db.Text, nullable=False)
     Position = db.Column(db.Text, nullable=False)
     Number = db.Column(db.Integer, nullable=False)
     Height = db.Column(db.Float, nullable=False)
     Weight = db.Column(db.Float, nullable=False)
-    
 
 
 class User(db.Model):
     """User in the system."""
+
     __tablename__ = 'users'
 
-    id = db.Column(
-        db.Integer,
-        primary_key=True,
-    )
-
-    username = db.Column(
-        db.Text,
-        nullable=False,
-        unique=True,
-    )
-
-    email = db.Column(
-        db.Text,
-        nullable=False,
-        unique=True,
-    )
-
-    password = db.Column(
-        db.Text,
-        nullable=False,
-    )
-
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.Text, nullable=False, unique=True)
+    email = db.Column(db.Text, nullable=False, unique=True)
+    password = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
         return f"<User #{self.id}: {self.username}, {self.email}>"
 
     @classmethod
-    def signup(cls, username, email, password, image_url):
+    def signup(cls, username, email, password):
         """Sign up user.
 
         Hashes password and adds user to system.
@@ -98,7 +76,6 @@ class User(db.Model):
             username=username,
             email=email,
             password=hashed_pwd,
-            
         )
 
         db.session.add(user)
@@ -117,17 +94,14 @@ class User(db.Model):
 
         user = cls.query.filter_by(username=username).first()
 
-        if user:
-            is_auth = bcrypt.check_password_hash(user.password, password)
-            if is_auth:
-                return user
+        if user and bcrypt.check_password_hash(user.password, password):
+            return user
 
         return False
 
 
-
 def connect_db(app):
-    """Function to connect to database"""
+    """Connect this database to provided Flask app."""
 
     db.app = app
     db.init_app(app)
