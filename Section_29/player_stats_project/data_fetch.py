@@ -4,7 +4,7 @@ import requests
 # Connect to PostgreSQL database
 conn = psycopg2.connect(
     host="localhost",
-    port="5000",
+    port="5432",
     database="player_stats_db",
     user="saphanley",
     password="prophetsaint1120"
@@ -24,7 +24,18 @@ create_table_query = """
 cursor.execute(create_table_query)
 conn.commit()
 
+table_name = 'player_stats'
+cursor.execute("SELECT EXISTS(SELECT 1 FROM information_schema.tables WHERE table_name=%s)", (table_name,))
+result = cursor.fetchone()[0]
+
+if result:
+    print("Table exists")
+else:
+    print("Table does not exist")
+
+
 # Fetch data from the NBA API
+# https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=PerGame&Scope=S&Season=2022-23&SeasonType=Regular%20Season&StatCategory=PTS
 BASE_API_URL = "https://stats.nba.com/stats/leagueLeaders"
 params = {
     "LeagueID": "00",
@@ -36,6 +47,7 @@ params = {
 }
 
 response = requests.get(BASE_API_URL, params=params)
+# print(response.content)
 
 if response.status_code == 200:
     data = response.json()

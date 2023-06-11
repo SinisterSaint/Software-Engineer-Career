@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Stats Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Player Stats Search Results</h1>
+    <form action="/search" method="GET">
+        <label for="player_name">Player Name:</label>
+        <input type="text" id="player_name" name="player_name" placeholder="Enter player name">
+        <label for="stat_category">Stat Category:</label>
+        <select id="stat_category" name="stat_category">
+            <option value="points_per_game">Points Per Game</option>
+            <!-- Add other stat categories as options here -->
+        </select>
+
+        <button type="submit">Search</button>
+    </form>
+
+    {% if results %}
+        <table>
+            <tr>
+                <th>Player Name</th>
+                <th>Team</th>
+                <th>Points Per Game</th>
+            </tr>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.player_name }}</td>
+                    <td>{{ result.team }}</td>
+                    <td>{{ result.points_per_game }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>
+

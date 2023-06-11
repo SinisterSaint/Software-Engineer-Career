@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NBA Player Stats</title>
+</head>
+<body>
+    <h1>Search for NBA Player</h1>
+    <form method="POST" action="{{ url_for('index') }}">
+        {{ form.csrf_token }}
+        {{ form.player_name.label }} {{ form.player_name(size=30) }}
+        {{ form.submit() }}
+    </form>
+    
+    {% if players %}
+        <h2>Search Results</h2>
+        <table>
+            <tr>
+                <th>Rank</th>
+                <th>Player ID</th>
+                <th>Player Name</th>
+                <th>Team ID</th>
+                <th>Team Name</th>
+            </tr>
+            {% for player in players %}
+                <tr>
+                    <td>{{ player.rank }}</td>
+                    <td>{{ player.player_id }}</td>
+                    <td>{{ player.player_name }}</td>
+                    <td>{{ player.team_id }}</td>
+                    <td>{{ player.team_name }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
