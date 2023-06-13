@@ -1,3 +1,43 @@
+
+The title of this application is "The Food Recipe App". This is a simple application where the user is able to create a user login and they will be able to view different recipes of their choice by searching the recipe on the app. The technology stack used for this project is React.js.
+
+
+API Link: https://www.themealdb.com/api/json/v1/1/search.php?s=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
