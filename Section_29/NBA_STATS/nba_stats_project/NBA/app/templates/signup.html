@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Sign Up</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('user.signup') }}">
+            {{ form.hidden_tag() }}
+            
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                {{ form.email(class="form-control", required=True) }}
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                {{ form.password(class="form-control", required=True) }}
+            </div>
+            <div class="mb-3">
+                <label for="confirm_password" class="form-label">Confirm Password:</label>
+                {{ form.confirm_password(class="form-control", required=True) }}
+            </div>
+            <div class="mb-3">
+                <label for="first_name" class="form-label">First Name:</label>
+                {{ form.first_name(class="form-control", required=True) }}
+            </div>
+            <div class="mb-3">
+                <label for="last_name" class="form-label">Last Name:</label>
+                {{ form.last_name(class="form-control", required=True) }}
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+{% endblock %}
