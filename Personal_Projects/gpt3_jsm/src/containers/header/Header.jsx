@@ -8,7 +8,7 @@ const Header = () => {
     <div className="gpt3__header section__padding" id="home">
       <div className="gpt3__header-content">
         <h1 className="">Let's Build Something amazing with GPT-3 OpenAI</h1>
-        <p>Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment. Party we years to order allow asked of.</p>
+        <p>"Despite any discomfort during travel, there was no hesitation in seeking assistance. All negative thoughts were replaced with the joy of experiencing changes and the enthusiasm for the upcoming journey. Over the years, we've become accustomed to accommodating various requests at our gatherings."</p>
 
         <div className="gpt3__header-content__input">
           <input type="email" placeholder="Your Email Address" />
